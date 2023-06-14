@@ -3,10 +3,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Protected Page</title>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
 </head>
 <body>
-    <h1>Welcome, ${username}!</h1>
-    <p>Hi ${username}, you are now on the protected page.</p>
+<h1>Done</h1>
+
 </body>
 </html>
