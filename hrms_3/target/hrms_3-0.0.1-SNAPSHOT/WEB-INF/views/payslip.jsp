@@ -65,12 +65,14 @@
         <p><strong>HRA:</strong><%=request.getAttribute("hra")  %> </p>
         <p><strong>TA:</strong><%=request.getAttribute("ta")  %></p>
         <p><strong>Variable Pay:</strong><%=request.getAttribute("variablePay")  %> </p>
+        <p><strong>Earned Leaves:</strong><%=request.getAttribute("earnedLeave")  %> </p>
       </div>
       <div class="sub-container sub-container2">
       <h2>Deductions</h2>
         <p><strong>Gratuity:</strong><%=request.getAttribute("gratuity")  %> </p>
         <p><strong>Health Insurance:</strong><%=request.getAttribute("healthInsurance")  %> </p>
         <p><strong>PF:</strong><%=request.getAttribute("pf")  %> </p>
+        <p><strong>Extra Leaves:</strong><%=request.getAttribute("unpaidLeave")  %> </p>
       </div>
     </div>
     <div class="container2"><h2>Pay</h2>

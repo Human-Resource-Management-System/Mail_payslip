@@ -1,3 +1,4 @@
+models\PermissionCompositeKey.class
 DAO\InductionDAO.class
 DAO\EmployeeRefDAOImpl.class
 models\Holiday.class
@@ -10,6 +11,7 @@ controllers\LoginController.class
 models\JobGrade.class
 DAO\EmployeeDAOImpl.class
 DAO\GradeHolidayDAOImpl.class
+DAO\ApplyPermissionDaoImpl.class
 models\EmployeeRedocuments.class
 DAO\EmployeeRefDAO.class
 DAO\InductionDAOImpl.class
@@ -19,7 +21,9 @@ DAO\PayRollDaoImpl.class
 DAO\PayRollDao.class
 controllers\CandidateController.class
 models\AdminUser.class
+models\ApplyPermissions.class
 controllers\MDController.class
+controllers\PermissionsController.class
 DAO\CandidateDAO.class
 models\Employee.class
 models\Candidate.class

@@ -15,14 +15,14 @@ public class PayRollDaoImpl implements PayRollDao {
 	@Override
 	public double grossPay(double basicPay, double hra, double ta, double variablePay, int earnedLeave) {
 		// TODO Auto-generated method stub
-		return basicPay + hra + ta + variablePay + (basicPay * 0.008);
+		return basicPay + hra + ta + variablePay + ((basicPay * 0.008) * earnedLeave);
 
 	}
 
 	@Override
 	public double deductions(double basicPay, double healthInsurance, double gratuity, double pf, int unpaidLeave) {
 		// TODO Auto-generated method stub
-		return gratuity + healthInsurance + pf + (basicPay * 0.005);
+		return gratuity + healthInsurance + pf + ((basicPay * 0.005) * unpaidLeave);
 	}
 
 	@Override

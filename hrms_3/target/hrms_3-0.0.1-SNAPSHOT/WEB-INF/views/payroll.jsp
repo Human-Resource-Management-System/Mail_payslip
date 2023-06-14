@@ -36,7 +36,7 @@
 <body>
   <h1>Monthly Pay Slip</h1>
 
-  <form action="getpayroll" method="get">
+  <form action="getpayslip" method="get">
     <label for="employee-id">Employee ID:</label>
     <input type="text" id="employee-id" name="employee-id" required>
 
@@ -58,6 +58,9 @@
 <label for="variable-pay">Variable Pay:</label>
 <input type="number" id="variable-pay" name="variable-pay" required>
 
+<label for="earned-leave">Earned Leaves:</label>
+<input type="number" id="earned-leave" name="earned-leave" required>
+
 <label for="gratuity">Gratuity:</label>
 <input type="number" id="gratuity" name="gratuity" required>
 
@@ -67,6 +70,9 @@
 <label for="pf">PF:</label>
 <input type="number" id="pf" name="pf" required>
 
+<label for="unpaid-leaves">Unpaid Leaves:</label>
+<input type="number" id="unpaid-leaves" name="unpaid-leaves" required>
+<br>
 <input type="submit" value="Generate Pay Slip">
 </form>
   </body>
