@@ -1,4 +1,4 @@
-package DAO;
+package service;
 
 public interface PayRollDao {
 

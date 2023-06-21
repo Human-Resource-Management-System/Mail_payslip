@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import DAO.EmployeeDAO;
-import DAO.PayRollDao;
 import models.Employee;
 import models.input.EmployeePayRollInputModel;
 import models.input.EmployeePayRollOutputModel;
+import service.PayRollDao;
 
 @Controller
 public class PayRoll {

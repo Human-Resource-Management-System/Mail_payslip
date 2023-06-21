@@ -54,7 +54,7 @@
 
 	<!-- byName example -->
  
-     <bean id="payRolldao" class="DAO.PayRollDaoImpl" autowire="byName"/>
+     <bean id="payRolldao" class="service.PayRollDaoImpl" autowire="byName"/>
      <bean id="empdao" class="DAO.EmployeeDAOImpl" autowire="byName"/>
      <bean id="payRollOutput" class="models.input.EmployeePayRollOutputModel" autowire="byName"/>
      
