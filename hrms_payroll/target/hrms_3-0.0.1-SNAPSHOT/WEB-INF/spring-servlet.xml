@@ -15,21 +15,23 @@
 	
 	<!-- Scans the classpath for annotated components that will be auto-registered as Spring beans -->
 	<context:annotation-config />
-	<context:component-scan base-package="contollers" />
+	<context:component-scan base-package="controllers" />
 	<!-- Activates various annotations to be detected in bean classes e.g: @Autowired -->
 	
 
-	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="org.postgresql.Driver" />
-		<property name="url" value="jdbc:postgresql://192.168.110.48:5432/plf_training" />
-		<property name="username" value="plf_training_admin" />
-		<property name="password" value="pff123" />
-	</bean>
+    <!-- DataSource configuration -->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="org.postgresql.Driver" />
+        <property name="url" value="jdbc:postgresql://localhost:5432/postgres" />
+        <property name="username" value="postgres" />
+        <property name="password" value="Chandu996@123" />
+    </bean>
 	
 	<bean id="entityManagerFactory" 
-			class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
-			p:packagesToScan="model"
-            p:dataSource-ref="dataSource" >
+      class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
+      p:packagesToScan="models"
+      p:dataSource-ref="dataSource">
+
 		<property name="jpaVendorAdapter">
 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
 				<property name="generateDdl" value="true" />
@@ -52,8 +54,10 @@
     </bean>
 
 	<!-- byName example -->
-    <bean id="apdi" class="DAO.ApplyPermissionDaoImpl" autowire="byName"/>
-    <bean id="app" class="models.ApplyPermissions" autowire="byName"/>
-    <bean id="cKey" class="models.PermissionCompositeKey" autowire="byName"/>
+ 
+     <bean id="payRolldao" class="service.PayRollDaoImpl" autowire="byName"/>
+     <bean id="empdao" class="DAO.EmployeeDAOImpl" autowire="byName"/>
+     <bean id="payRollOutput" class="models.input.EmployeePayRollOutputModel" autowire="byName"/>
+     
 
 </beans>

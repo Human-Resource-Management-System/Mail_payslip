@@ -1,5 +1,8 @@
 package controllers;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +15,7 @@ import models.Employee;
 import models.input.EmployeePayRollInputModel;
 import models.input.EmployeePayRollOutputModel;
 import service.PayRollDao;
+import service.PaySlipMail;
 
 @Controller
 public class PayRoll {
@@ -28,7 +32,8 @@ public class PayRoll {
 	}
 
 	@RequestMapping(value = "/getpayslip")
-	public String getPayroll(@ModelAttribute("employee") EmployeePayRollInputModel employee, Model model) {
+	public String getPayroll(@ModelAttribute("employee") EmployeePayRollInputModel employee, Model model,HttpServletRequest request,
+			HttpServletResponse response) {
 		// Retrieve employee data from the input model
 		int id = employee.getId();
 		System.out.println(id);
@@ -74,6 +79,13 @@ public class PayRoll {
 		model.addAttribute("pay", payRollOutput);
 
 		double ctc = payRolldao.calCTC();
+//		System.out.println(ctc);
+		try {
+			PaySlipMail.sendEmail(request, response, payRollOutput);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		System.out.println(ctc);
 		return "payslip";
 	}

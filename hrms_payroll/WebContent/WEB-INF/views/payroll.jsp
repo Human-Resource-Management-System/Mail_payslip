@@ -57,13 +57,13 @@
     <input type="text" id="designation" name="designation" value=<%=employee.getEmplDesignation() %> required>
 	
 <label for="basic-pay">Basic Pay:</label>
-<input type="number" id="basicPay" name="basicPay" value=<%=employee.getBasic_sal() %> required>
+<input type="number" id="basicPay" name="basicPay" value=<%=employee.getEmpl_basicsal() %> required>
 
 <label for="fixed-pay">Fixed pay:</label>
-<input type="number" id="fixedPay" name="fixedPay" value=<%=employee.getFixed_sal() %> required>
+<input type="number" id="fixedPay" name="fixedPay" value=<%=employee.getEmpl_fixedsal() %> required>
 
 <label for="variable-pay">Variable Pay:</label>
-<input type="number" id="variablePay" name="variablePay" value=<%=employee.getVariable_sal() %> required>
+<input type="number" id="variablePay" name="variablePay" value=<%=employee.getEmpl_variablesal() %> required>
 <%
         } else if (error != null) {
     %>

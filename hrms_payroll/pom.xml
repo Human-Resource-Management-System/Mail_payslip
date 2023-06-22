@@ -99,6 +99,26 @@
         <artifactId>thymeleaf-spring5</artifactId>
         <version>3.0.12.RELEASE</version>
     </dependency>
+     <!-- JavaMail API -->
+    <dependency>
+        <groupId>javax.mail</groupId>
+        <artifactId>javax.mail-api</artifactId>
+        <version>1.6.2</version>
+    </dependency>
+
+    <!-- JavaMail implementation for sending emails -->
+    <dependency>
+        <groupId>com.sun.mail</groupId>
+        <artifactId>javax.mail</artifactId>
+        <version>1.6.2</version>
+    </dependency>
+
+    <!-- iText library for PDF generation -->
+    <dependency>
+        <groupId>com.itextpdf</groupId>
+        <artifactId>itextpdf</artifactId>
+        <version>5.5.13.2</version>
+    </dependency>
     
 	</dependencies>
 
