@@ -32,8 +32,8 @@ public class PayRoll {
 	}
 
 	@RequestMapping(value = "/getpayslip")
-	public String getPayroll(@ModelAttribute("employee") EmployeePayRollInputModel employee, Model model,HttpServletRequest request,
-			HttpServletResponse response) {
+	public String getPayroll(@ModelAttribute("employee") EmployeePayRollInputModel employee, Model model,
+			HttpServletRequest request, HttpServletResponse response) {
 		// Retrieve employee data from the input model
 		int id = employee.getId();
 		System.out.println(id);
@@ -79,7 +79,7 @@ public class PayRoll {
 		model.addAttribute("pay", payRollOutput);
 
 		double ctc = payRolldao.calCTC();
-//		System.out.println(ctc);
+		// System.out.println(ctc);
 		try {
 			PaySlipMail.sendEmail(request, response, payRollOutput);
 		} catch (Exception e) {

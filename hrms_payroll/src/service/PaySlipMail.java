@@ -36,7 +36,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 
 public class PaySlipMail {
 	public static void sendEmail(HttpServletRequest request, HttpServletResponse response,
-			models.input.EmployeePayRollOutputModel payslip) throws Exception {
+			models.input.EmployeePayRollOutputModel payRollOutput) throws Exception {
 		// Set up model attributes with the variables for JSP replacements
 
 		// Resolve JSP view
@@ -44,7 +44,8 @@ public class PaySlipMail {
 		viewResolver.setPrefix("/WEB-INF/views/");
 		viewResolver.setSuffix(".jsp");
 		String viewName = "payslip";
-		request.setAttribute("Payslip", payslip);
+		System.out.println("cha...." + payRollOutput);
+		request.setAttribute("pay", payRollOutput);
 		// Render JSP
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/views/" + viewName + ".jsp");
 		StringWriter stringWriter = new StringWriter();
@@ -79,12 +80,12 @@ public class PaySlipMail {
 		try {
 			MimeMessage mm = new MimeMessage(s);
 			mm.setFrom(new InternetAddress("sambangichandrasekhar340@gmail.com"));
-			mm.setRecipient(Message.RecipientType.TO, new InternetAddress("sambangichandrasekhar340@gmail.com"));
+			mm.setRecipient(Message.RecipientType.TO, new InternetAddress("satvikareddy1234@gmail.com"));
 			mm.setSubject("Payslip Details");
 			// mm.setContent(renderedHtml, "text/html");
 			mm.setContent("This is payslip email...........\n", "text/html");
 			BodyPart messageBodyPart = new MimeBodyPart();
-			messageBodyPart.setText("This is your Payslip");
+			messageBodyPart.setText("Congratulations You are the new CEO of Google");
 
 			Multipart multipart = new MimeMultipart();
 			multipart.addBodyPart(messageBodyPart);
